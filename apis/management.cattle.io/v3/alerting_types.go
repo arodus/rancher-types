@@ -62,7 +62,7 @@ type ProjectAlertSpec struct {
 type Recipient struct {
 	Recipient    string `json:"recipient,omitempty"`
 	NotifierName string `json:"notifierName,omitempty" norman:"required,type=reference[notifier]"`
-	NotifierType string `json:"notifierType,omitempty" norman:"required,options=slack|email|pagerduty|webhook|wechat"`
+	NotifierType string `json:"notifierType,omitempty" norman:"required,options=slack|email|pagerduty|webhook|wechat|telegram"`
 }
 
 type TargetNode struct {
@@ -268,6 +268,7 @@ type NotifierSpec struct {
 	PagerdutyConfig *PagerdutyConfig `json:"pagerdutyConfig,omitempty"`
 	WebhookConfig   *WebhookConfig   `json:"webhookConfig,omitempty"`
 	WechatConfig    *WechatConfig    `json:"wechatConfig,omitempty"`
+	TelegramConfig  *TelegramConfig  `json:"telegramConfig,omitempty"`
 }
 
 type Notification struct {
@@ -277,6 +278,7 @@ type Notification struct {
 	PagerdutyConfig *PagerdutyConfig `json:"pagerdutyConfig,omitempty"`
 	WebhookConfig   *WebhookConfig   `json:"webhookConfig,omitempty"`
 	WechatConfig    *WechatConfig    `json:"wechatConfig,omitempty"`
+	TelegramConfig  *TelegramConfig  `json:"telegramConfig,omitempty"`
 }
 
 type SMTPConfig struct {
@@ -311,6 +313,13 @@ type WechatConfig struct {
 	Agent            string `json:"agent,omitempty" norman:"required"`
 	Corp             string `json:"corp,omitempty" norman:"required"`
 	RecipientType    string `json:"recipientType,omitempty" norman:"required,options=tag|party|user,default=party"`
+	*HTTPClientConfig
+}
+
+type TelegramConfig struct {
+	BotToken         string `json:"botToken,omitempty" norman:"password,required"`
+	DefaultRecipient string `json:"defaultRecipient,omitempty" norman:"required"`
+
 	*HTTPClientConfig
 }
 
