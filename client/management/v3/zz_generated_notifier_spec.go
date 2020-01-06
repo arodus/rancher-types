@@ -9,6 +9,7 @@ const (
 	NotifierSpecFieldSMTPConfig      = "smtpConfig"
 	NotifierSpecFieldSendResolved    = "sendResolved"
 	NotifierSpecFieldSlackConfig     = "slackConfig"
+	NotifierSpecFieldTelegramConfig  = "telegramConfig"
 	NotifierSpecFieldWebhookConfig   = "webhookConfig"
 	NotifierSpecFieldWechatConfig    = "wechatConfig"
 )
@@ -21,6 +22,7 @@ type NotifierSpec struct {
 	SMTPConfig      *SMTPConfig      `json:"smtpConfig,omitempty" yaml:"smtpConfig,omitempty"`
 	SendResolved    bool             `json:"sendResolved,omitempty" yaml:"sendResolved,omitempty"`
 	SlackConfig     *SlackConfig     `json:"slackConfig,omitempty" yaml:"slackConfig,omitempty"`
+	TelegramConfig  *TelegramConfig  `json:"telegramConfig,omitempty" yaml:"telegramConfig,omitempty"`
 	WebhookConfig   *WebhookConfig   `json:"webhookConfig,omitempty" yaml:"webhookConfig,omitempty"`
 	WechatConfig    *WechatConfig    `json:"wechatConfig,omitempty" yaml:"wechatConfig,omitempty"`
 }

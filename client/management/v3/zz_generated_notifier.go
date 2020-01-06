@@ -22,6 +22,7 @@ const (
 	NotifierFieldSlackConfig          = "slackConfig"
 	NotifierFieldState                = "state"
 	NotifierFieldStatus               = "status"
+	NotifierFieldTelegramConfig       = "telegramConfig"
 	NotifierFieldTransitioning        = "transitioning"
 	NotifierFieldTransitioningMessage = "transitioningMessage"
 	NotifierFieldUUID                 = "uuid"
@@ -47,6 +48,7 @@ type Notifier struct {
 	SlackConfig          *SlackConfig      `json:"slackConfig,omitempty" yaml:"slackConfig,omitempty"`
 	State                string            `json:"state,omitempty" yaml:"state,omitempty"`
 	Status               *NotifierStatus   `json:"status,omitempty" yaml:"status,omitempty"`
+	TelegramConfig       *TelegramConfig   `json:"telegramConfig,omitempty" yaml:"telegramConfig,omitempty"`
 	Transitioning        string            `json:"transitioning,omitempty" yaml:"transitioning,omitempty"`
 	TransitioningMessage string            `json:"transitioningMessage,omitempty" yaml:"transitioningMessage,omitempty"`
 	UUID                 string            `json:"uuid,omitempty" yaml:"uuid,omitempty"`
