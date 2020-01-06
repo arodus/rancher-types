@@ -317,9 +317,10 @@ type WechatConfig struct {
 }
 
 type TelegramConfig struct {
-	BotToken         string `json:"botToken,omitempty" norman:"type=password,required"`
-	DefaultRecipient string `json:"defaultRecipient,omitempty" norman:"required"`
-
+	BotToken              string `json:"botToken,omitempty" norman:"type=password,required"`
+	DefaultRecipient      string `json:"defaultRecipient,omitempty" norman:"required"`
+	DisableWebPagePreview bool   `json:"disableWebPagePreview,omitempty" norman:"required"`
+	DisableNotification   bool   `json:"disableNotification,omitempty" norman:"required"`
 	*HTTPClientConfig
 }
 
